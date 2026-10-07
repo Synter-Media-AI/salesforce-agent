@@ -1,6 +1,6 @@
 # Salesforce CRM MCP Starter Kit — Manage Salesforce with AI
 
-> **This is a recipe repo.** The Synter MCP server itself lives at [Synter-Media-AI/mcp-server](https://github.com/Synter-Media-AI/mcp-server): 19 ad platforms, campaign creation on 14, one-click install in Cursor, Claude, ChatGPT, and VS Code. Issues, releases, and ⭐ go there.
+> **This is a recipe repo.** The Synter MCP server itself lives at [Synter-Media-AI/mcp-server](https://github.com/Synter-Media-AI/mcp-server): create, launch, and optimize campaigns across the major ad platforms, with one-click install in Cursor, Claude, ChatGPT, and VS Code. Issues, releases, and ⭐ go there.
 
 
 [![MCP Compatible](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io)
@@ -8,6 +8,29 @@
 [![Platform: Salesforce](https://img.shields.io/badge/Platform-Salesforce-00A1E0)](https://www.salesforce.com)
 
 **Connect enterprise sales data to your ad campaigns.** Open this repo in Amp, Cursor, or VS Code and query Salesforce opportunities, leads, and accounts with AI — then sync closed-won customers to ad platforms for account-based marketing.
+
+---
+
+## Install
+
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=synter-ads&config=eyJ1cmwiOiJodHRwczovL21jcC5zeW50ZXJhaS5jb20ifQ==)
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Synter-0098FF?logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=synter-ads&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.synterai.com%22%7D)
+
+- **Cursor / VS Code:** click a button above, or open this repo — it ships `.cursor/mcp.json` and `.vscode/mcp.json`.
+- **Claude Code:** this repo ships `.mcp.json`; or run:
+  ```bash
+  claude mcp add --transport http synter-ads https://mcp.synterai.com
+  ```
+- **Codex:**
+  ```bash
+  codex mcp add synter-ads --url https://mcp.synterai.com
+  codex mcp login synter-ads
+  ```
+- **Claude Desktop:** copy `claude_desktop_config.json` into your Claude config directory (macOS: `~/Library/Application Support/Claude/`, Windows: `%APPDATA%\Claude\`) and replace the placeholder API key.
+
+Your client opens Synter sign-in in the browser (OAuth). New here? Create an account at https://synterai.com/sign-up. Headless/CI fallback: send `X-Synter-Key` with a key from https://synterai.com/developer.
+
+The MCP server itself: https://github.com/Synter-Media-AI/mcp-server
 
 ---
 
@@ -20,27 +43,6 @@ For enterprise B2B, this data transforms your advertising. Instead of targeting 
 The challenge is getting Salesforce data *out* and *into* ad platforms. SOQL queries, OAuth tokens, field mapping, and data transformation make it a developer-heavy task. An AI agent handles the entire pipeline.
 
 **Best for:** Enterprise B2B sales teams, ABM programs, companies with complex multi-touch sales cycles, syncing closed-won accounts to LinkedIn for lookalike targeting.
-
----
-
-## Quick Start (30 Seconds)
-
-### Amp / Cursor / VS Code (Copilot)
-
-1. **Get a free API key** at [syntermedia.ai/developer](https://syntermedia.ai/developer)
-2. **Set the key:**
-   ```bash
-   export SYNTER_API_KEY=syn_your_key_here
-   ```
-3. **Open this repo** in your editor
-4. **Start chatting** — MCP tools are pre-configured in `.mcp.json`
-
-### Claude Desktop
-
-Copy `claude_desktop_config.json` to your Claude config directory and replace the API key:
-
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ---
 
@@ -230,4 +232,4 @@ The agent matches Salesforce closed-won deals to ad platform clicks using GCLIDs
 
 MIT — see [LICENSE](LICENSE) for details.
 
-Built by [Synter](https://syntermedia.ai) · [Get API Key](https://syntermedia.ai/developer) · [Documentation](https://syntermedia.ai/docs)
+Built by [Synter](https://synterai.com) · [Get API Key](https://synterai.com/developer) · [Documentation](https://synterai.com/docs)
